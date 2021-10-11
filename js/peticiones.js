@@ -1,0 +1,3 @@
+function verListaMensajes(){
+    alert("Funciona");
+}

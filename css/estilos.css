@@ -1,0 +1,30 @@
+h2{
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+    width: 300px;
+}
+
+tr, td{
+    border : 1px solid rgb(0, 0, 0);
+}
+
+.enlaces{
+    text-align: right;
+}
+
+.formularios{
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid black;
+}
