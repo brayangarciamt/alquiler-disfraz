@@ -6,24 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/peticiones.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>creacion disfraz</title>
 </head>
 <body>
+    <!-- Enlace que direcciona a pagina principal -->
     <a href="main.html">Pagina principal</a>
-    
     <div class="formularios">
         <h2>Mensaje</h2><br/>
         <form>
+            <!-- Etiqueta ID Mensaje con cuadro para entrada de texto -->
             <label for="labelIdMensaje">ID:</label>
             <input type="text" id="labelIdMensaje" name="inputIdMensaje"><br/><br/>
+            <!-- Etiqueta Mensaje con cuadro para entrada de texto-->
             <label for="labelMensaje">Mensaje:</label><br/>
             <textarea id="labelMensaje" name="inputMensaje" rows="5" cols="35"></textarea><br/><br/>
-
-            <button id="botonEnviarMensaje" onclick="verListaMensajes()">Enviar mensaje</button>
+            <!-- Boton encargado de ejecutar la funcion enviarMensaje() -->
+            <button id="botonEnviarMensaje" onclick="enviarMensaje()">Enviar mensaje</button>
         </form>
-    </div>
-    <div id="getMensaje">
-
+    </div></br>
+    <!-- Boton encargado de ejecutar la funcion verListaMensajes() -->
+    <button id="verMensajes" onclick="verListaMensajes()">Ver Mensajes</button><br/></br>
+    <div id="respuestaMensaje"> 
+        <!--Se muestran los mensajes que tiene actualmente la tabla MENSAJE -->
     </div>
 </body>
 </html>

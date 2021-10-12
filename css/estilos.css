@@ -13,8 +13,11 @@ table{
     width: 300px;
 }
 
-tr, td{
+th, tr, td{
     border : 1px solid rgb(0, 0, 0);
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
 }
 
 .enlaces{
@@ -28,3 +31,4 @@ tr, td{
     padding: 20px;
     border: 1px solid black;
 }
+
