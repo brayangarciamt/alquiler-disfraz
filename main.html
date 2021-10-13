@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/peticiones.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Alquiler de disfraces</title>
 </head>
 <body>
     <div class="enlaces">
         <!-- <a href="iniciarSesion.html">Iniciar sesion</a> -->
-        <a href="registroCliente.html">Registrar cliente</a>
-        <a href="creacionDisfraz.html">Creacion disfraz</a>
-        <a href="mensaje.html">Registro mensaje</a>
+        <a href="registroCliente.html">Clientes</a>
+        <a href="creacionDisfraz.html">Disfraces</a>
+        <a href="mensaje.html">Mensajes</a>
     </div>  
 
     <h1>TIENDA DE DISFRACES</h1>
     <p>Que mas parcero, si necesita reservar los disfraces mas bacanos de la ciudad, llego a donde era.</p>
-    <p>Para reservar es necesario que inicie sesión, si no esta registrado pulse <a href="registro.html">aqui.</a></p>
+    <p>Para reservar es necesario que inicie sesión, si no esta registrado pulse <a href="registroCliente.html">aqui.</a></p>
     <br/>
 
     <h2>Catalogo</h2>
-    <table>
+    <table id="catalogo">
         <tr>
             <td><img src="img/mujer.jpg" alt="Mujer maravilla" style="width:300px;height:500px;"></td>
             <td><img src="img/cleopatra.jpg" alt="Cleopatra" style="width:300px;height:480px;"></td>
