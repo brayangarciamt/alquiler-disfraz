@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 h2{
     text-align: center;
 }
@@ -32,3 +35,17 @@ th, tr, td{
     border: 1px solid black;
 }
 
+#botonBorrarDisfraz{
+    background-color: red;
+    color: white;
+}
+
+#botonLimpiarFormularioDisfraz{
+    background-color:gold;
+    color: black;
+}
+
+#botonListaDisfraz{
+    background-color:greenyellow;
+    color: black;
+}
