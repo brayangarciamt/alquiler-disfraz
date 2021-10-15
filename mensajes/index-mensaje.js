@@ -1,5 +1,5 @@
 let mensajes = [];
-let BASE_URL = "https://gc894c361a55720-db202110031639.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/message/message"
+let BASE_URL = "https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message"
 
 getMensajes()
 
