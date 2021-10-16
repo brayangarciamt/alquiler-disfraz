@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETO 2</title>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index-mensaje.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Modulo de Mensajes</h1>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="./../index.html">Menu principal</a></li>
+                <li><a href="crear-mensaje.html">Registrar nuevo mensaje</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2>Listado de Mensajes</h2>
+            <table id="tableMensaje">
+            </table>
+        </article>
+    </section>
+    <br>
+    <section id="editSection">
+        <h3>Formulario de edicion</h3>
+        <nav>
+            <ul>
+                <li><a href="index-mensaje.html">Cerrar edicion</a></li>
+            </ul>
+        </nav>
+        <form id="formUpdateMensaje">
+            <label for="idUpdate">ID:</label><br>
+            <input type="text" id="idUpdate" name="idUpdate"><br>
+
+            <label for="messagetextUpdate">Escriba aqui su mensaje:</label><br>
+            <textarea id="messagetextUpdate" name="messagetextUpdate" rows="10" cols="50"></textarea>
+
+            <input type="button" value="Editar" onclick="updateMensaje()">
+        </form>
+    </section>
+
+    <footer>
+        <p>Made with ❤</p>
+    </footer>
+</body>
+
+</html>
