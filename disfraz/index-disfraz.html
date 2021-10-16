@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/peticiones.js"></script>
+    <link rel="stylesheet" href="./../css/estilos.css">
+    <script src="disfraz.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>creacion disfraz</title>
 </head>
 <body>
-    <a href="main.html">Pagina principal</a>
+    <a href="./../index.html">Pagina principal</a>
     
     <div class="formularios">
         <h2>Datos del disfraz</h2><br/>
@@ -27,13 +27,13 @@
             <label for="labelNombreDisfraz">Nombre:</label>
             <input type="text" id="labelNombreDisfraz" name="inputNombreDisfraz"><br/><br/>
             
-            <button id="botonCrearDisfraz" onclick="crearDisfraz()">Crear disfraz</button>
-            <button id="botonActualizarDisfraz" onclick="actualizarDisfraz()">Actualizar disfraz</button>
-            <button id="botonBorrarDisfraz" onclick="borrarDisfraz()" >Borrar disfraz</button><br/><br/>
-            <button id="botonLimpiarFormularioDisfraz" onclick="limpiarInputFormularioDisfraz()" >Limpiar formulario</button>
+            <input type="button" id="botonCrearDisfraz" onclick="crearDisfraz()" value="Crear disfraz">
+            <input type="button" id="botonActualizarDisfraz" onclick="actualizarDisfraz()" value="Actualizar disfraz">
+            <input type="button" id="botonBorrarDisfraz" onclick="borrarDisfraz()" value="Borrar disfraz"><br/><br/>
+            <input type="button" id="botonLimpiarFormularioDisfraz" onclick="limpiarInputFormularioDisfraz()" value="Limpiar formulario">
         </form>
     </div>
-    <button id="botonListaDisfraz" onclick="verListaDisfraz()">Mostrar listado de disfraces</button><br/><br/>
+    <input type="button" id="botonListaDisfraz" onclick="verListaDisfraz()" value="Actualizar listado disfraces"><br/><br/>
     <div id="listadoDisfraz">
 
     </div>
