@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/peticiones.js"></script>
-    <title>Registro</title>
-</head>
-<body>
-    <a href="main.html">Pagina principal</a>
-    
-    <div class="formularios">
-        <h2>Registro de usuario</h2><br/>
-        <form>
-            <label for="labelId">Documento:</label>
-            <input type="text" id="labelId" name="inputId"><br/>
-            <label for="labelNombre">Nombre:</label>
-            <input type="text" id="nombre" name="inputNombre"><br>
-            <label for="labelEdad">Edad:</label>
-            <input type="text" id="labelEdad" name="inputEdad"><br/>
-            <label for="labelCorreoRegistro">Correo:</label>
-            <input type="text" id="labelCorreoRegistro" name="inputCorreoRegistro"><br/>
-            <label for="labelClaveRegistro">Contraseña:</label>
-            <input type="text" id="labelClaveRegistro" name="inputTClaveRegistro"><br/><br/>
+    <head>
+        <title> Portal de Manejo CLIENTES </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css">
 
-            <button id="botonRegistroCliente" onclick="">Registrar</button>
-        </form>
-    </div>
-</body>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/peticiones.js"></script>
+        
+    </head>
+
+    <body>
+        <a href="main.html">Pagina principal</a>
+        
+        <!-- Inicio porción nueva de código -->
+        <h2> Portal Manejo del Cliente </h2>>
+
+        <button onclick="consultarCliente()"> Mostrar CLIENTES </button>>
+        <button onclick="insertarCliente()"> Insertar CLIENTE </button>>
+        <!-- <button onclick="borrarCliente()"> Borrar CLIENTE </button>> -->
+        <button onclick="actualizarCliente()"> Actualizar CLIENTE </button>>
+     
+        <button onclick="consultarIdCliente()"> Consultar CLIENTE por ID </button>>
+        <input type="number" ID="idCliente" placeholder="Escriba código del CLIENTE"></input>>
+
+        <div ID="idDivCliente"></div>>
+
+        <!-- Se pone este bloque temporalmente bajo comentario mientras se resuelve
+            las consultas, definidas y funcionanddo se retoma este bloque para
+            organizar la vista en el formulario
+        <div class="formularios">
+            <h2>Registro de usuario</h2><br/>
+            <form>
+                <label for="labelId">Documento:</label>
+                <input type="text" id="labelId" name="inputId"><br/>
+                <label for="labelNombre">Nombre:</label>
+                <input type="text" id="nombre" name="inputNombre"><br>
+                <label for="labelEdad">Edad:</label>
+                <input type="text" id="labelEdad" name="inputEdad"><br/>
+                <label for="labelCorreoRegistro">Correo:</label>
+                <input type="text" id="labelCorreoRegistro" name="inputCorreoRegistro"><br/>
+                <label for="labelClaveRegistro">Contraseña:</label>
+                <input type="text" id="labelClaveRegistro" name="inputTClaveRegistro"><br/><br/>
+
+                <button id="botonRegistroCliente" onclick="">Registrar</button>
+            </form>
+        </div>
+        -->
+    </body>
 </html>
