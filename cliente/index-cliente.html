@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/peticiones.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/estilos.css">
+    <script src="cliente.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Registro</title>
 </head>
 <body>
-    <a href="index.html">Pagina principal</a>
+    <a href="./../index.html">Pagina principal</a>
     
     <div class="formularios">
-        <h2>Registro de usuario</h2><br/>
+        <h2>Datos del usuario</h2><br/>
         <form>
             <label for="labelId">Documento:</label>
             <input type="text" id="labelId" name="inputId"><br/>
             <label for="labelNombre">Nombre:</label>
-            <input type="text" id="nombre" name="inputNombre"><br>
+            <input type="text" id="labelNombre" name="inputNombre"><br>
             <label for="labelEdad">Edad:</label>
             <input type="text" id="labelEdad" name="inputEdad"><br/>
             <label for="labelCorreoRegistro">Correo:</label>
             <input type="text" id="labelCorreoRegistro" name="inputCorreoRegistro"><br/>
             <label for="labelClaveRegistro">Contraseña:</label>
-            <input type="text" id="labelClaveRegistro" name="inputTClaveRegistro"><br/><br/>
+            <input type="password" id="labelClaveRegistro" name="inputClaveRegistro"><br/><br/>
 
-            <button id="botonRegistroCliente" onclick="">Registrar</button>
+            <input type="button" id="botonRegistroCliente" onclick="registrarCliente()" value="Registrar cliente">
+            <input type="button" id="botonActualizarCliente" onclick="actualizarCliente()" value="Actualizar cliente">
+            <input type="button" id="botonBorrarCliente" onclick="borrarCliente()" value="Borrar cliente" disabled><br/><br/>
+            <input type="button" id="botonLimpiarFormularioCliente" onclick="limpiarInputFormularioCliente()" value="Limpiar formulario">
         </form>
+    </div>
+    <input type="button" id="botonListaClientes" onclick="verListaClientes()" value="Actualizar listado clientes"><br/><br/>
+    <div id="listadoClientes">
+
     </div>
 </body>
 </html>
