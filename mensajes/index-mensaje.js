@@ -1,19 +1,18 @@
 let mensajes = [];
-let BASE_URL = "https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message"
-
-getMensajes()
+let BASE_URL = 'http://localhost:8080/api/Message';
 
 $(document).ready(function () {
-    if($("#editSection").length) $("#editSection").hide()
+    if($("#editSection").length) $("#editSection").hide();
+    getMensajes()
 });
 
 function getMensajes() {
     $.ajax({
-        url: BASE_URL,
-        type: "GET",
-        dataType: "JSON",
+        url: BASE_URL+'/all',
+        type: 'GET',
+        dataType: 'JSON',
         success: function(result){
-            mensajes = result.items
+            mensajes = result;
             renderTable()
         },
         error: function(error){
@@ -24,18 +23,18 @@ function getMensajes() {
 
 function saveMensaje() {
     let nuevoMensaje = {
-        id: parseInt($("#id").val()),
-        messagetext: $("#messagetext").val(),
+        idMessage: parseInt($("#id").val()),
+        messageText: $("#messagetext").val(),
     }
     let dataSend = JSON.stringify(nuevoMensaje)
     $.ajax({
-        url: BASE_URL,
-        type: "POST",
-        dataType: "JSON",
+        url: BASE_URL+'/save',
+        type: 'POST',
+        dataType: 'JSON',
         data: dataSend,
-        contentType: "application/json",
+        contentType: 'application/json',
         success: function(result){
-            alert("Mensaje creado correctamente")
+            alert("Mensaje creado correctamente");
             getMensajes()
         },
         error: function(error){
@@ -46,17 +45,17 @@ function saveMensaje() {
 
 function deleteMensaje(id) {
     let data = {
-        id: id
+        idMessage: id
     }
     let dataSend = JSON.stringify(data)
     $.ajax({
-        url: BASE_URL,
-        type: "DELETE",
-        dataType: "JSON",
+        url: BASE_URL+'/'+id,
+        type: 'DELETE',
+        dataType: 'JSON',
         data: dataSend,
-        contentType: "application/json",
+        contentType: 'application/json',
         success: function(result){
-            alert("Mensaje eliminado")
+            alert("Mensaje eliminado");
             window.location.reload()
         },
         error: function(error){
@@ -67,18 +66,18 @@ function deleteMensaje(id) {
 
 function updateMensaje() {
     let nuevoMensaje = {
-        id: parseInt($("#idUpdate").val()),
-        messagetext: $("#messagetextUpdate").val(),
+        idMessage: parseInt($("#idUpdate").val()),
+        messageText: $("#messagetextUpdate").val(),
     }
     let dataSend = JSON.stringify(nuevoMensaje)
     $.ajax({
-        url: BASE_URL,
-        type: "PUT",
-        dataType: "JSON",
+        url: BASE_URL+'/update',
+        type: 'PUT',
+        dataType: 'JSON',
         data: dataSend,
-        contentType: "application/json",
+        contentType: 'application/json',
         success: function(result){
-            alert("Mensaje editado correctamente")
+            alert("Mensaje editado correctamente");
             getMensajes()
         },
         error: function(error){
@@ -90,12 +89,12 @@ function updateMensaje() {
 
 function showMensaje(id) {
     $.ajax({
-        url: BASE_URL + "/" + id,
-        type: "GET",
-        dataType: "JSON",
+        url: BASE_URL + '/' + id,
+        type: 'GET',
+        dataType: 'JSON',
         success: function(result){
-            $("#editSection").show()
-            $("#idUpdate").val(result.items[0].id)
+            $("#editSection").show();
+            $("#idUpdate").val(result.items[0].id);
             $("#messagetextUpdate").val(result.items[0].messagetext)
         },
         error: function(error){
@@ -105,19 +104,19 @@ function showMensaje(id) {
 }
 
 function renderTable() {
-    let bodyTable = `<tr>
-        <th>ID</th>
-        <th>Mensaje</th>
-        <th>Detalle</th>
-        <th>Eliminar</th>
-    </tr>`;
+    let bodyTable = "<tr>"
+                        +"<th>ID</th>"
+                        +"<th>Mensaje</th>"
+                        +"<th>Detalle</th>"
+                        +"<th>Eliminar</th>"
+                    +"</tr>";
     if (mensajes.length) {
         for (const iterator of mensajes) {
             bodyTable += "<tr>"
-            bodyTable += "<td>" + iterator.id + "</td>"
-            bodyTable += "<td>" + iterator.messagetext + "</td>"
-            bodyTable += "<td><input type='button' value='detalle' onclick='showMensaje(" + iterator.id + ")'></td>"
-            bodyTable += "<td><input type='button' value='eliminar' onclick='deleteMensaje(" + iterator.id + ")'></td>"
+            bodyTable += "<td>" + iterator.idMessage + "</td>"
+            bodyTable += "<td>" + iterator.messageText + "</td>"
+            bodyTable += "<td><input type='button' value='detalle' onclick='showMensaje(" + iterator.idMessage + ")'></td>"
+            bodyTable += "<td><input type='button' value='eliminar' onclick='deleteMensaje(" + iterator.idMessage + ")'></td>"
             bodyTable += "</tr>"
         }
     } else {

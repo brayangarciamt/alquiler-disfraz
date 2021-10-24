@@ -2,6 +2,19 @@
  * Funciones para el formulario disfraz
  */
 
+let BASE_URL = 'http://localhost:8080/api/Costume';
+
+function capturarDatosDisfraz(){
+
+    let disfrazCapturado = {id:$("#idDisfraz").val(), 
+                    brand:$("#marcaDisfraz").val(), 
+                    model:$("#modeloDisfraz").val(), 
+                    category:$("#categoriaDisfraz").val(), 
+                    name:$("#nombreDisfraz").val()
+                };
+
+    return JSON.stringify(disfrazCapturado);
+}
 
 /**
  * Funcion encarga de obtener los datos de la tabla Costume
@@ -14,11 +27,11 @@ function verListaDisfraz(){
      */
     $.ajax (
                 {
-                    url          : 'https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/costume/costume',
+                    url          :  BASE_URL+'/all',
                     type         : 'GET',
                     dataType     : 'json',
                     success      :  function(json){
-                                        actualizarListaDisfraz(json.items);
+                                        actualizarListaDisfraz(json);
                                         console.log(json)
                                     },
                     error        :   function(xhr,status){
@@ -37,24 +50,16 @@ function verListaDisfraz(){
 function crearDisfraz(){
     
     /**
-     * se crea un diccionario para ser enviado como parametro
-     * en la peticion POST
+     * Se lanza funcion que obtiene los datos
+     * actuales en el formulario de disfraz
      */
-    let disfrazPost = { id:$("#labelIdDisfraz").val(), 
-                        brand:$("#labelBrand").val(), 
-                        model:$("#labelModeloDisfraz").val(), 
-                        category_id:$("#labelIdCategoria").val(), 
-                        name:$("#labelNombreDisfraz").val()
-                };
-
-    let datosEnvioPost  = JSON.stringify(disfrazPost);  
-
+    let datosEnvioPost  = capturarDatosDisfraz();  
     /**
      * peticion AJAX POST para agregar registro a la tabla costume
      */
     $.ajax (
                 {
-                    url          : 'https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/costume/costume',
+                    url          :  BASE_URL+'/save',
                     type         : 'POST',
                     data         :  datosEnvioPost,
                     contentType  : 'application/json',
@@ -83,19 +88,19 @@ function verDetalleDisfraz(id){
      * Se deshabilita el input ID al momento de acceder
      * al detalle del disfraz
      */
-    document.getElementById("labelIdDisfraz").disabled = true;
+    document.getElementById("idDisfraz").disabled = true;
 
     /**
      * peticion AJAX GET para traer registro especifico de tabla costume
      */
     $.ajax (
                 {
-                    url          : 'https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/costume/costume/'+id,
+                    url          : BASE_URL+'/'+id,
                     type         : 'GET',
                     dataType     : 'json',
                     success      :  function(json){                           
                                         console.log(json);
-                                        detalleDisfraz(json.items)
+                                        detalleDisfraz(json)
                                     },
                     error        :   function(xhr,status){
                                         console.log("Error --> ",status)
@@ -116,17 +121,10 @@ function verDetalleDisfraz(id){
 function actualizarDisfraz() {
 
     /**
-     * Diccionario con elementos necesarios para la
-     * peticion PUT
+     * Se lanza funcion que obtiene los datos
+     * actuales en el formulario de disfraz
      */
-    let disfraz = { id:$("#labelIdDisfraz").val(), 
-                    brand:$("#labelBrand").val(), 
-                    model:$("#labelModeloDisfraz").val(), 
-                    category_id:$("#labelIdCategoria").val(), 
-                    name:$("#labelNombreDisfraz").val()
-                };
-
-    let datosEnvio  = JSON.stringify(disfraz);
+    let datosEnvioPut  = capturarDatosDisfraz();
 
     /**
      * peticion AJAX PUT actualizar registro de la tabla costume
@@ -134,9 +132,9 @@ function actualizarDisfraz() {
     $.ajax (
                 {
 
-                    url          : 'https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/costume/costume',
+                    url          : BASE_URL+'/update',
                     type         : 'PUT',
-                    data         :  datosEnvio,
+                    data         :  datosEnvioPut,
                     contentType  : 'application/json',
                     success      :  function(response){
                                         console.log(response) 
@@ -158,21 +156,19 @@ function actualizarDisfraz() {
 function borrarDisfraz() {
 
     /**
-     * Variables usadas para especificar el disfraz
-     * que se requiere borrar
-     * 
+     * Se lanza funcion que obtiene los datos
+     * actuales en el formulario de disfraz
      */
-    let disfraz = {id : $("#labelIdDisfraz").val()};
-    let datosEnvio = JSON.stringify(disfraz);
+    let datosEnvioDelete = capturarDatosDisfraz();
     /**
      * peticion AJAX DELETE para borrar registro de la tabla costume
      */
     $.ajax (
                 {
 
-                    url          : 'https://g7c696f5e7eec44-alquiladisfraz.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/costume/costume',
+                    url          : BASE_URL+'/'+JSON.parse(capturarDatosDisfraz()).id,
                     type         : 'DELETE',
-                    data         :  datosEnvio,
+                    data         :  datosEnvioDelete,
                     contentType  : 'application/json',
                     success      :  function(response){
                                         console.log(response)
@@ -196,20 +192,20 @@ function actualizarListaDisfraz(items){
     $("#listadoDisfraz").empty();
     $("#listadoDisfraz").append("<h3>Listado disfraces</h3>"); //titulo de la tabla
     $("#listadoDisfraz").append("<p>Dar click sobre el ID del disfraz que quiere detallar</p>"); //mensaje para el usuario
-    let tablaListadoDisfraces = "<table id='tablaListado'>"; //etiqueta para crear tabla 
-    tablaListadoDisfraces+="<tr>"; // se crea fila para añadir cabeceras
-    tablaListadoDisfraces+="<th>ID</th>"; //titulo columna ID
-    tablaListadoDisfraces+="<th>Nombre</th>"; // titulo columan nombre
-    tablaListadoDisfraces+="</tr>"; //cierre de fila
+    let tablaListadoDisfraces = "<table id='tablaListado'>" //etiqueta para crear tabla 
+                            +"<tr>" // se crea fila para añadir cabeceras
+                            +"<th>ID</th>" //titulo columna ID
+                            +"<th>Nombre</th>" // titulo columan nombre
+                            +"</tr>" //cierre de fila
     /* ciclo encargado de recorrer los items y colocar los elementos
     * en la tabla creada
     */
-    for(i=0 ; i < items.length; i++){
-        let idDisfraz = items[i].id;
-        tablaListadoDisfraces+="<tr>";
-        tablaListadoDisfraces+="<td><a href=Javascript:verDetalleDisfraz("+idDisfraz+")>" + items[i].id + "</a></td>";                                                            
-        tablaListadoDisfraces+="<td>" + items[i].name + "</td>";                                                              
-        tablaListadoDisfraces+="</tr>";
+    for(let i of items){
+        let idDisfraz = i.id;
+        tablaListadoDisfraces+="<tr>"
+                                +"<td><a href=Javascript:verDetalleDisfraz("+idDisfraz+")>" + i.id + "</a></td>"                                                            
+                                +"<td>" + i.name + "</td>"                                                              
+                            +"</tr>";
     }
     tablaListadoDisfraces+="</table>"; //etiqueta para crear tabla
     $("#listadoDisfraz").append(tablaListadoDisfraces)
@@ -221,23 +217,23 @@ function actualizarListaDisfraz(items){
 function detalleDisfraz(items){
     /**
      * El formulario se rellena con los valores de respuesta del disfraz seleccionado
-     * se debe colocar item[0] porque la respuesta es un diccionario
+     * se debe colocar item porque la respuesta es una lista
      */
-    $("#labelIdDisfraz").val(items[0].id);
-    $("#labelBrand").val(items[0].brand);
-    $("#labelModeloDisfraz").val(items[0].model);
-    $("#labelIdCategoria").val(items[0].category_id);
-    $("#labelNombreDisfraz").val(items[0].name)
+    $("#idDisfraz").val(items.id);
+    $("#marcaDisfraz").val(items.brand);
+    $("#modeloDisfraz").val(items.model);
+    $("#categoriaDisfraz").val(items.category);
+    $("#nombreDisfraz").val(items.name)
 }
 
 /**
  * Limpia las entradas del formulario "datos del disfraz"
  */
 function limpiarInputFormularioDisfraz(){
-    document.getElementById("labelIdDisfraz").disabled = false;
-    $("#labelIdDisfraz").val("");
-    $("#labelBrand").val("");
-    $("#labelModeloDisfraz").val("");
-    $("#labelIdCategoria").val("");
-    $("#labelNombreDisfraz").val("")
+    document.getElementById("idDisfraz").disabled = false;
+    $("#idDisfraz").val("");
+    $("#marcaDisfraz").val("");
+    $("#modeloDisfraz").val("");
+    $("#categoriaDisfraz").val("");
+    $("#nombreDisfraz").val("")
 }
