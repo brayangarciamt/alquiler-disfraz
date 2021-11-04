@@ -8,9 +8,11 @@ function capturarDatosDisfraz(){
 
     let disfrazCapturado = {id:$("#idDisfraz").val(), 
                     brand:$("#marcaDisfraz").val(), 
-                    model:$("#modeloDisfraz").val(), 
+                    year:$("#modeloDisfraz").val(), 
                     category:$("#categoriaDisfraz").val(), 
-                    name:$("#nombreDisfraz").val()
+                    name:$("#nombreDisfraz").val(),
+                    description:$("#descripcionDisfraz").val(),
+
                 };
 
     return JSON.stringify(disfrazCapturado);
@@ -223,17 +225,21 @@ function detalleDisfraz(items){
     $("#marcaDisfraz").val(items.brand);
     $("#modeloDisfraz").val(items.model);
     $("#categoriaDisfraz").val(items.category);
-    $("#nombreDisfraz").val(items.name)
+    $("#nombreDisfraz").val(items.name);
+    $("#descripcionDisfraz").val(items.description)
 }
 
 /**
  * Limpia las entradas del formulario "datos del disfraz"
+ * 
+ * se reemplaza por etiqueta de tipo reset
+ * 
  */
-function limpiarInputFormularioDisfraz(){
-    document.getElementById("idDisfraz").disabled = false;
-    $("#idDisfraz").val("");
-    $("#marcaDisfraz").val("");
-    $("#modeloDisfraz").val("");
-    $("#categoriaDisfraz").val("");
-    $("#nombreDisfraz").val("")
-}
+// function limpiarInputFormularioDisfraz(){
+//     document.getElementById("idDisfraz").disabled = false;
+//     $("#idDisfraz").val("");
+//     $("#marcaDisfraz").val("");
+//     $("#modeloDisfraz").val("");
+//     $("#categoriaDisfraz").val("");
+//     $("#nombreDisfraz").val("")
+// }

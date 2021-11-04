@@ -35,12 +35,12 @@ th, tr, td{
     border: 1px solid black;
 }
 
-#botonBorrarDisfraz{
+.botonBorrar{
     background-color: red;
     color: white;
 }
 
-#botonLimpiarFormularioDisfraz{
+.botonLimpiar{
     background-color:gold;
     color: black;
 }
@@ -48,4 +48,9 @@ th, tr, td{
 #botonListaDisfraz{
     background-color:greenyellow;
     color: black;
+}
+
+input{
+    width: auto;
+    height: auto;
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/estilos.css">
+    <script src="reservacion.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Disfraz</title>
+</head>
+<body>
+    <a href="./../index.html">Pagina principal</a>
+    
+    <div class="formularios">
+        <h2>Datos de la reservacion</h2><br/>
+        <form >
+            <label for="idReservacion">ID:</label>
+            <input type="text" id="idReservacion" name="inputIdReservacion" disabled><br/>
+
+            <label for="idDisfrazReservacion">Disfraz:</label>
+            <input type="text" id="idDisfrazReservacion" name="inputIdDisfrazReservacion" autocomplete="off"><br/> 
+
+            <label for="idClienteReservacion">ID cliente:</label>
+            <input type="number" id="idClienteReservacion" name="inputIdClienteReservacion" autocomplete="off"><br/>
+
+            <label for="fechaInicio">Fecha inicio:</label>
+            <input type="datetime-local" id="fechaInicio" name="inputFechaInicio" min="2020-01-01" max="2021-12-31" autocomplete="off"><br/>
+
+            <label for="fechaEntrega">Fecha entrega:</label>
+            <input type="datetime-local" id="fechaEntrega" name="inputFechaEntrega" min="2020-01-01" max="2021-12-31" autocomplete="off"><br/>
+            
+            <label for="status">Estado:</label>
+            <input list="estados" id="status" name="inputStatus" autocomplete="off" disabled>
+            <datalist id="estados">
+                <option value="Programado">
+                <option value="Cancelado">
+                <option value="Realizado">    
+            </datalist>
+            <br/><br/>
+            
+            <input type="button" class="botonCrear" id="botonCrearReservacion" onclick="crearDisfraz()" value="Crear reservacion">
+            <input type="button" class="botonActualizar" id="botonActualizarReservaciona" onclick="actualizarDisfraz()" value="Actualizar reservacion>
+            <input type="button"class="botonBorrar" id="botonBorrarReservacion" onclick="borrarDisfraz()" value="Borrar reservacion"><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioReservacion" value="Limpiar formulario">  
+        </form>
+    </div>
+    <input type="button" id="botonListaReservacion" onclick="verListaReservacion()" value="Actualizar lista reservaciones"><br/><br/>
+    <div id="listadoReservacion">
+    <!-- espacio donde se dibuja tabla con lista de reservaciones-->
+    </div>
+</body>
+</html>

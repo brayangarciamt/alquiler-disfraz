@@ -22,11 +22,14 @@
 
     <section>
         <form action="/index-mensaje.html" id="formMensaje">
-            <label for="id">ID:</label><br>
-            <input type="text" id="id" name="id"><br>
+            <label for="idMensaje">ID mensaje:</label><br>
+            <input type="text" id="idMensaje" name="inputIdMensaje" disabled><br>
+
+            <label for="idDisfrazMensaje">ID disfraz:</label><br>
+            <input type="text" id="idDisfrazMensaje" name="inputIdDisfrazMensaje"><br>
 
             <label for="messagetext">Escriba aqui su mensaje:</label><br>
-            <textarea id="messagetext" name="messagetext" rows="10" cols="50"></textarea>
+            <textarea id="messagetext" name="messagetext" rows="10" cols="50" maxlength="250"></textarea>
 
             <input type="button" value="Submit" onclick="saveMensaje()">
         </form>

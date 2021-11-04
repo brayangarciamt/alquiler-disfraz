@@ -16,7 +16,7 @@ function getMensajes() {
             renderTable()
         },
         error: function(error){
-            alert("Something went wrong " + error.status + " " + error.statusText)
+            console.log("Something went wrong " + error.status + " " + error.statusText)
         }
     });
 }

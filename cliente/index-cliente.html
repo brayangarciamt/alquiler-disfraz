@@ -17,23 +17,27 @@
         <h2>Datos del usuario</h2><br/>
         <form>
             <label for="idCliente">ID:</label>
-            <input type="text" id="idCliente" name="inputIdCliente"><br/>
-            <label for="nombreCliente">Nombre:</label>
-            <input type="text" id="nombreCliente" name="inputNombreCliente"><br>
-            <label for="edadCliente">Edad:</label>
-            <input type="text" id="edadCliente" name="inputEdadCliente"><br/>
-            <label for="correoCliente">Correo:</label>
-            <input type="text" id="correoCliente" name="inputCorreoCliente"><br/>
-            <label for="claveCliente">Contraseña:</label>
-            <input type="password" id="claveCliente" name="inputClaveCliente"><br/><br/>
+            <input type="text" id="idCliente" name="inputIdCliente" disabled><br/>
 
-            <input type="button" id="botonRegistroCliente" onclick="registrarCliente()" value="Registrar cliente">
-            <input type="button" id="botonActualizarCliente" onclick="actualizarCliente()" value="Actualizar cliente">
-            <input type="button" id="botonBorrarCliente" onclick="borrarCliente()" value="Borrar cliente"><br/><br/>
-            <input type="button" id="botonLimpiarFormularioCliente" onclick="limpiarInputFormularioCliente()" value="Limpiar formulario">
+            <label for="nombreCliente">Nombre:</label>
+            <input type="text" id="nombreCliente" name="inputNombreCliente" maxlength="250"><br>
+
+            <label for="edadCliente">Edad:</label>
+            <input type="text" id="edadCliente" name="inputEdadCliente" maxlength="3" min="12" max="120"><br/>
+
+            <label for="correoCliente">Correo:</label>
+            <input type="text" id="correoCliente" name="inputCorreoCliente" maxlength="45"><br/>
+            
+            <label for="claveCliente">Contraseña:</label>
+            <input type="password" id="claveCliente" name="inputClaveCliente" maxlength="45"><br/><br/>
+
+            <input type="button" class="botonCrear "id="botonRegistroCliente" onclick="registrarCliente()" value="Registrar cliente">
+            <input type="button" class="botonActualizar" id="botonActualizarCliente" onclick="actualizarCliente()" value="Actualizar cliente">
+            <input type="button" class="botonBorrar" id="botonBorrarCliente" onclick="borrarCliente()" value="Borrar cliente" disabled><br/><br/>
+            <input type="button" class="botonLimpiar" id="botonLimpiarFormularioCliente" onclick="limpiarInputFormularioCliente()" value="Limpiar formulario">
         </form>
     </div>
-    <input type="button" id="botonListaClientes" onclick="verListaClientes()" value="Actualizar listado clientes"><br/><br/>
+    <input type="button" id="botonListaClientes" onclick="verListaClientes()" value="Actualizar lista clientes"><br/><br/>
     <div id="listadoClientes">
 
     </div>

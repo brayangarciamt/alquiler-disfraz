@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/estilos.css">
+    <script src="categoria.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Disfraz</title>
+</head>
+<body>
+    <a href="./../index.html">Pagina principal</a>
+    
+    <div class="formularios">
+        <h2>Datos de la categoria</h2><br/>
+        <form >
+            <label for="idCategoria">ID:</label>
+            <input type="text" id="idCategoria" name="inputIdDisfraz" size="6" disabled><br/>
+
+            <label for="nombreCategoria">Nombre:</label>
+            <input type="text" id="nombreCategoria" name="inputNombreCategoria" maxlength="45" autocomplete="off"><br/>
+
+            <label for="descripcionCategoria">Descripcion:</label>
+            <input type="text" id="descripcionCategoria" name="inputDescripcionCategoria" maxlength="250" autocomplete="off"><br/>
+            <br/>
+            
+            <input type="button" class="botonCrear" id="botonCrearCategoria" onclick="crearCategoria()" value="Crear categoria">
+            <input type="button" class="botonActualizar" id="botonActualizarCategoria" onclick="actualizarCategoria()" value="Actualizar categoria">
+            <input type="button" class="botonBorrar" id="botonBorrarCategoria" onclick="borrarCategoria()" value="Borrar categoria"><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioCategoria" value="Limpiar formulario">  
+        </form>
+    </div>
+    <input type="button" id="botonListaCategoria" onclick="verListaCategoria()" value="Actualizar lista categorias"><br/><br/>
+    <div id="listadoCategoria">
+    <!-- espacio donde se dibuja tabla con lista de categorias-->
+    </div>
+</body>
+</html>
