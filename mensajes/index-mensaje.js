@@ -1,10 +1,11 @@
 let mensajes = [];
-let BASE_URL = 'http://localhost:8080/api/Message' // pruebas con local host
-let BASE_URL_COSTUME = 'http://localhost:8080/api/Costume' //pruebas con local host
+
+// let BASE_URL = 'http://localhost:8080/api/Message' // pruebas con local host
+// let BASE_URL_COSTUME = 'http://localhost:8080/api/Costume' //pruebas con local host
 
 
-// let BASE_URL = 'http://168.138.130.41:8080api/Message'; //pruebas con server
-// let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' //pruebas con server
+let BASE_URL = 'http://168.138.130.41:8080api/Message'; //pruebas con server
+let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' //pruebas con server
 
 
 $(document).ready(function () {

@@ -6,11 +6,19 @@
 
 
 /**
- * enlaces para solicitar recursos al Backend
+ * enlaces para solicitar recursos al Backend de pruebas
  */
-let BASE_URL_REPORTDATES = 'http://localhost:8080/api/Reservation/report-dates';
-let BASE_URL_REPORTSTATUS = 'http://localhost:8080/api/Reservation/report-status';
-let BASE_URL_REPORTCLIENTS = 'http://localhost:8080/api/Reservation/report-clients';
+// let BASE_URL_REPORTDATES = 'http://localhost:8080/api/Reservation/report-dates';
+// let BASE_URL_REPORTSTATUS = 'http://localhost:8080/api/Reservation/report-status';
+// let BASE_URL_REPORTCLIENTS = 'http://localhost:8080/api/Reservation/report-clients';
+
+/**
+ * Enlaces para conectar a backend cloud
+ */
+let BASE_URL_REPORTDATES = 'http://168.138.130.41:8080/api/Reservation/report-dates';
+let BASE_URL_REPORTSTATUS = 'http://168.138.130.41:8080/api/Reservation/report-status';
+let BASE_URL_REPORTCLIENTS = 'http://168.138.130.41:8080/api/Reservation/report-clients';
+
 
 
 /**

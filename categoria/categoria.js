@@ -3,9 +3,9 @@
  * 
  */
 
-let BASE_URL_CATEGORY = 'http://localhost:8080/api/Category'; // pruebas con local host
+// let BASE_URL_CATEGORY = 'http://localhost:8080/api/Category'; // pruebas con local host
 
-// let BASE_URL_CATEGORY = 'http://168.138.130.41:8080/api/Category'; // Pruebas con server
+let BASE_URL_CATEGORY = 'http://168.138.130.41:8080/api/Category'; // Pruebas con server
 
 /**
  * Funcion que trae todos los registros de categoria 

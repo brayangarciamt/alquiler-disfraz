@@ -2,13 +2,13 @@
  * funciones para pagina reservaciones
  */
 
- let BASE_URL_RESERVATION = 'http://localhost:8080/api/Reservation'; // pruebas con local host
- let BASE_URL_COSTUME = 'http://localhost:8080/api/Costume'; // pruebas con local host
+//  let BASE_URL_RESERVATION = 'http://localhost:8080/api/Reservation'; // pruebas con local host
+//  let BASE_URL_COSTUME = 'http://localhost:8080/api/Costume'; // pruebas con local host
 
 let URL_CALIFICAR = './../calificacion/index-calificacion.html'
 
- // let BASE_URL_RESERVATION = 'http://168.138.130.41:8080/api/Reservation'; // Pruebas con server
-
+let BASE_URL_RESERVATION = 'http://168.138.130.41:8080/api/Reservation'; // Pruebas con server
+let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' 
 
 /**
  * Funcion que trae todos los registros de reservacion

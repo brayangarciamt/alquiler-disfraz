@@ -2,9 +2,9 @@
  * Funciones para el formulario cliente
  */
 
-let BASE_URL_CLIENT = 'http://localhost:8080/api/Client'; // pruebas con local host
+// let BASE_URL_CLIENT = 'http://localhost:8080/api/Client'; // pruebas con local host
 
-// let BASE_URL_CLIENT = 'http://168.138.130.41:8080/api/Client'; // Pruebas con server
+let BASE_URL_CLIENT = 'http://168.138.130.41:8080/api/Client'; // Pruebas con server
 
 /**
  * Funcion para captura datos de las cajas de
