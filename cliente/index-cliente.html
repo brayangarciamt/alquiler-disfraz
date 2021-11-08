@@ -20,20 +20,20 @@
             <input type="text" id="idCliente" name="inputIdCliente" disabled><br/>
 
             <label for="nombreCliente">Nombre:</label>
-            <input type="text" id="nombreCliente" name="inputNombreCliente" maxlength="250"><br>
+            <input type="text" id="nombreCliente" name="inputNombreCliente" maxlength="250" autocomplete="off"><br>
 
             <label for="edadCliente">Edad:</label>
-            <input type="text" id="edadCliente" name="inputEdadCliente" maxlength="3" min="12" max="120"><br/>
+            <input type="text" id="edadCliente" name="inputEdadCliente" maxlength="3" min="12" max="120" autocomplete="off"><br/>
 
             <label for="correoCliente">Correo:</label>
-            <input type="text" id="correoCliente" name="inputCorreoCliente" maxlength="45"><br/>
+            <input type="text" id="correoCliente" name="inputCorreoCliente" maxlength="45" autocomplete="off"><br/>
             
             <label for="claveCliente">Contraseña:</label>
-            <input type="password" id="claveCliente" name="inputClaveCliente" maxlength="45"><br/><br/>
+            <input type="password" id="claveCliente" name="inputClaveCliente" maxlength="45" autocomplete="off"><br/><br/>
 
             <input type="button" class="botonCrear "id="botonRegistroCliente" onclick="registrarCliente()" value="Registrar cliente">
-            <input type="button" class="botonActualizar" id="botonActualizarCliente" onclick="actualizarCliente()" value="Actualizar cliente">
-            <input type="button" class="botonBorrar" id="botonBorrarCliente" onclick="borrarCliente()" value="Borrar cliente" disabled><br/><br/>
+            <input type="button" class="botonActualizar" id="botonActualizarCliente" onclick="actualizarCliente()" value="Actualizar cliente" hidden>
+            <input type="button" class="botonBorrar" id="botonBorrarCliente" onclick="borrarCliente()" value="Borrar cliente" hidden><br/><br/>
             <input type="button" class="botonLimpiar" id="botonLimpiarFormularioCliente" onclick="limpiarInputFormularioCliente()" value="Limpiar formulario">
         </form>
     </div>

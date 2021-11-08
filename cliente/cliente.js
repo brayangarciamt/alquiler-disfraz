@@ -2,7 +2,9 @@
  * Funciones para el formulario cliente
  */
 
-let BASE_URL = 'http://localhost:8080/api/Client';
+let BASE_URL_CLIENT = 'http://localhost:8080/api/Client'; // pruebas con local host
+
+// let BASE_URL_CLIENT = 'http://168.138.130.41:8080/api/Client'; // Pruebas con server
 
 /**
  * Funcion para captura datos de las cajas de
@@ -33,7 +35,7 @@ function verListaClientes(){
      */
     $.ajax (
                 {
-                    url          : BASE_URL+'/all',
+                    url          : BASE_URL_CLIENT+'/all',
                     type         : 'GET',
                     dataType     : 'json',
                     success      :  function(json){
@@ -66,7 +68,7 @@ function registrarCliente(){
      */
     $.ajax (
                 {
-                    url          :  BASE_URL+'/save',
+                    url          :  BASE_URL_CLIENT+'/save',
                     type         : 'POST',
                     data         :  datosEnvioPost,
                     contentType  : 'application/json',
@@ -103,7 +105,7 @@ function actualizarCliente() {
     $.ajax (
                 {
 
-                    url          : BASE_URL+'/update',
+                    url          : BASE_URL_CLIENT+'/update',
                     type         : 'PUT',
                     data         :  datosEnvioPut,
                     contentType  : 'application/json',
@@ -138,7 +140,7 @@ function borrarCliente() {
     $.ajax (
                 {
 
-                    url          :  BASE_URL+'/'+JSON.parse(capturarDatosCliente()).idClient,
+                    url          :  BASE_URL_CLIENT+'/'+JSON.parse(capturarDatosCliente()).idClient,
                     type         : 'DELETE',
                     data         :  datosEnvio,
                     contentType  : 'application/json',
@@ -174,7 +176,7 @@ function verDetalleCliente(id){
      */
     $.ajax (
                 {
-                    url          :  BASE_URL+'/'+id,
+                    url          :  BASE_URL_CLIENT+'/'+id,
                     type         : 'GET',
                     dataType     : 'json',
                     success      :  function(json){                           
@@ -230,17 +232,29 @@ function detalleCliente(items){
     $("#nombreCliente").val(items.name);
     $("#edadCliente").val(items.age);
     $("#correoCliente").val(items.email);
-    $("#claveCliente").val(items.password)
+    $("#claveCliente").val(items.password);
+
+    document.getElementById("botonActualizarCliente").hidden = false;
+    document.getElementById("botonBorrarCliente").hidden = false;
+    document.getElementById("botonRegistroCliente").hidden = true;
+
+    document.getElementById("correoCliente").disabled = true;
 }
 
 /**
  * Limpia las entradas del formulario "datos del disfraz"
  */
 function limpiarInputFormularioCliente(){
-    document.getElementById("idCliente").disabled = false;
+    
     $("#idCliente").val("");
     $("#nombreCliente").val("");
     $("#edadCliente").val("");
     $("#correoCliente").val("");
-    $("#claveCliente").val("")
+    $("#claveCliente").val("");
+
+    document.getElementById("botonActualizarCliente").hidden = true;
+    document.getElementById("botonBorrarCliente").hidden = true;
+    document.getElementById("botonRegistroCliente").hidden = false;
+
+    document.getElementById("correoCliente").disabled = false;
 }

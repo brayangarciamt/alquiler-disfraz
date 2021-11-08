@@ -8,35 +8,41 @@
     <script src="calificacion.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Disfraz</title>
+    <title>Calificacion</title>
 </head>
 <body>
-    <a href="./../index.html">Pagina principal</a>
+    <a id="mainPage" href="./../index.html">Pagina principal</a>
     
     <div class="formularios">
         <h2>Datos de la calificacion</h2><br/>
-        <form >
+        <form id="formCalificacion" onreset="cerrarPagina()" >
             <label for="idCalificacion">ID:</label>
-            <input type="text" id="idCalificacion" name="inputIdCalificacion" disabled><br/>
-
-            <label for="calificacion">Calificacion:</label>
-            <input type="number" id="calificacion" name="inputCalificacion" autocomplete="off" required min="0" max="5"><br/> 
+            <input type="number" id="idCalificacion" name="inputIdCalificacion" disabled><br/>
 
             <label for="idReservaCalificacion">ID reservacion:</label>
             <input type="number" id="idReservaCalificacion" name="inputIdReservaCalificacion" autocomplete="off"><br/>
 
-            <label for="mensajeCalificacion">Mensaje:</label>
-            <input type="text" id="mensajeCalificacion" name="inputMensajeCalificacion" maxlength="250" autocomplete="off"><br/>
+            <label for="calificacion">Calificacion:</label>
+            <select id="calificacion" name="inputCalificacion">
+                <option value="">Seleccionar</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br/> 
 
-            <br/><br/>
+            <label for="mensajeCalificacion">Mensaje:</label>
+            <textarea id="mensajeCalificacion" name="inputMensajeCalificacion" rows="10" maxlength="250" autocomplete="off" placeholder="Mensaje para el administrador"></textarea><br/><br/>
             
-            <input type="button" class="botonCrear" id="botonCrearReservacion" onclick="crearCalificacion()" value="Enviar calificacion">
-            <input type="button" class="botonActualizar" id="botonActualizarReservaciona" onclick="actualizarCalificacion()" value="Actualizar calificacion">
-            <input type="button"class="botonBorrar" id="botonBorrarReservacion" onclick="borrarCalificacion()" value="Borrar calificacion"><br/><br/>
-            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioCalificacion" value="Limpiar formulario">  
+            <input type="button" class="botonCrear" id="botonCrearCalificacion" onclick="saveCalificacion()" value="Enviar calificacion">
+            <input type="button" class="botonActualizar" id="botonActualizarCalificacion" onclick="updateCalificacion()" value="Actualizar calificacion" hidden>
+            <input type="button"class="botonBorrar" id="botonBorrarCalificacion" onclick="deleteCalificacion()" value="Borrar calificacion" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioCalificacion" value="Limpiar formulario" onclick="limpiarFormularioScore()">  
         </form>
     </div>
-    <input type="button" id="botonListaCalificacion" onclick="verListaCalificaciones()" value="Actualizar lista calificaciones"><br/><br/>
+    <input type="button" id="botonListaCalificacion" onclick="getCalificacion()" value="Actualizar lista calificaciones"><br/><br/>
     <div id="listadoCalificacion">
     <!-- espacio donde se dibuja tabla con lista de Calificaciones-->
     </div>

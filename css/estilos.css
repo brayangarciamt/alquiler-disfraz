@@ -13,14 +13,14 @@ label {
 table{
     border-collapse: collapse;
     margin: auto;
-    width: 300px;
+    width: fit-content;
 }
 
 th, tr, td{
     border : 1px solid rgb(0, 0, 0);
     height: fit-content;
     width: fit-content;
-    padding: 5px;
+    padding: 10px;
 }
 
 .enlaces{

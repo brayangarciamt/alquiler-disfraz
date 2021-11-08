@@ -8,45 +8,46 @@
     <script src="reservacion.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Disfraz</title>
+    <title>Reservaciones</title>
 </head>
 <body>
     <a href="./../index.html">Pagina principal</a>
     
     <div class="formularios">
         <h2>Datos de la reservacion</h2><br/>
-        <form >
+        <form id="formReservacion">
             <label for="idReservacion">ID:</label>
             <input type="text" id="idReservacion" name="inputIdReservacion" disabled><br/>
 
-            <label for="idDisfrazReservacion">Disfraz:</label>
-            <input type="text" id="idDisfrazReservacion" name="inputIdDisfrazReservacion" autocomplete="off"><br/> 
+            <label for="disfrazReservacion">Disfraz:</label>
+            <select id="disfrazReservacion" name="inputDisfrazReservacion" >
+                <!-- Lista de disfraz -->
+            </select><br/> 
 
             <label for="idClienteReservacion">ID cliente:</label>
             <input type="number" id="idClienteReservacion" name="inputIdClienteReservacion" autocomplete="off"><br/>
 
             <label for="fechaInicio">Fecha inicio:</label>
-            <input type="datetime-local" id="fechaInicio" name="inputFechaInicio" min="2020-01-01" max="2021-12-31" autocomplete="off"><br/>
+            <input type="datetime-local" id="fechaInicio" name="inputFechaInicio" ><br/>
 
             <label for="fechaEntrega">Fecha entrega:</label>
-            <input type="datetime-local" id="fechaEntrega" name="inputFechaEntrega" min="2020-01-01" max="2021-12-31" autocomplete="off"><br/>
+            <input type="datetime-local" id="fechaEntrega" name="inputFechaEntrega"><br/>
             
             <label for="status">Estado:</label>
-            <input list="estados" id="status" name="inputStatus" autocomplete="off" disabled>
-            <datalist id="estados">
-                <option value="Programado">
-                <option value="Cancelado">
-                <option value="Realizado">    
-            </datalist>
+            <select id="status" name="inputStatus" disabled>
+                <option value="created" selected>Programado</option>
+                <option value="cancelled">Cancelado</option>
+                <option value="completed">Realizado</option>
+            </select>
             <br/><br/>
             
-            <input type="button" class="botonCrear" id="botonCrearReservacion" onclick="crearDisfraz()" value="Crear reservacion">
-            <input type="button" class="botonActualizar" id="botonActualizarReservaciona" onclick="actualizarDisfraz()" value="Actualizar reservacion>
-            <input type="button"class="botonBorrar" id="botonBorrarReservacion" onclick="borrarDisfraz()" value="Borrar reservacion"><br/><br/>
-            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioReservacion" value="Limpiar formulario">  
+            <input type="button" class="botonCrear" id="botonCrearReservacion" onclick="saveReservacion()" value="Crear reservacion">
+            <input type="button" class="botonActualizar" id="botonActualizarReservacion" onclick="updateReservacion()" value="Actualizar reservacion" hidden>
+            <input type="button" class="botonBorrar" id="botonBorrarReservacion" onclick="deleteReservacion()" value="Borrar reservacion" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioReservacion" value="Limpiar formulario" onclick="limpiarFormularioReserva()">  
         </form>
     </div>
-    <input type="button" id="botonListaReservacion" onclick="verListaReservacion()" value="Actualizar lista reservaciones"><br/><br/>
+    <input type="button" id="botonListaReservacion" onclick="getReservacion()" value="Actualizar lista reservaciones"><br/><br/>
     <div id="listadoReservacion">
     <!-- espacio donde se dibuja tabla con lista de reservaciones-->
     </div>

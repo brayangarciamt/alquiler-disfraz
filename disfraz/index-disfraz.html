@@ -15,9 +15,9 @@
     
     <div class="formularios">
         <h2>Datos del disfraz</h2><br/>
-        <form >
+        <form id="formDisfraz">
             <label for="idDisfraz">ID:</label>
-            <input type="text" id="idDisfraz" name="inputIdDisfraz" disabled><br/>
+            <input type="number" id="idDisfraz" name="inputIdDisfraz" disabled><br/>
 
             <label for="marcaDisfraz">Marca:</label>
             <input type="text" id="marcaDisfraz" name="inputMarcaDisfraz" maxlength="45" autocomplete="off"><br/> 
@@ -26,22 +26,24 @@
             <input type="text" id="nombreDisfraz" name="inputNombreDisfraz" maxlength="45" autocomplete="off"><br/>
 
             <label for="modeloDisfraz">Año:</label>
-            <input type="number" id="modeloDisfraz" name="inputModeloDisfraz" maxlength="4" min="2000" max="2021" autocomplete="off"><br/>
+            <input type="number" id="modeloDisfraz" name="inputModeloDisfraz" maxlength="4"" autocomplete="off"><br/>
 
             <label for="categoriaDisfraz">Categoria:</label>
-            <input type="text" id="categoriaDisfraz" name="inputCategoriaDisfraz" autocomplete="off"><br/>
+            <select id="categoriaDisfraz" name="inputCategoriaDisfraz">
+                <!-- Se crea lista con las categorias existentes -->
+            </select><br/>
 
             <label for="descripcionDisfraz">Descripcion:</label>
             <input type="text" id="descripcionDisfraz" name="inputDescripcionDisfraz" maxlength="250" autocomplete="off"><br/>
             <br/>
             
-            <input type="button" class="botonCrear" id="botonCrearDisfraz" onclick="crearDisfraz()" value="Crear disfraz">
-            <input type="button" class="botonActualizar" id="botonActualizarDisfraz" onclick="actualizarDisfraz()" value="Actualizar disfraz">
-            <input type="button"class="botonBorrar" id="botonBorrarDisfraz" onclick="borrarDisfraz()" value="Borrar disfraz"><br/><br/>
-            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioDisfraz" value="Limpiar formulario">  
+            <input type="button" class="botonCrear" id="botonCrearDisfraz" onclick="saveDisfraz()" value="Crear disfraz">
+            <input type="button" class="botonActualizar" id="botonActualizarDisfraz" onclick="updateDisfraz()" value="Actualizar disfraz" hidden>
+            <input type="button"class="botonBorrar" id="botonBorrarDisfraz" onclick="deleteDisfraz()" value="Borrar disfraz" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioDisfraz" onclick="limpiarFormularioDisfraz()" value="Limpiar formulario">  
         </form>
     </div>
-    <input type="button" id="botonListaDisfraz" onclick="verListaDisfraz()" value="Actualizar lista disfraces"><br/><br/>
+    <input type="button" id="botonListaDisfraz" onclick="getDisfraz()" value="Actualizar lista disfraces"><br/><br/>
     <div id="listadoDisfraz">
     <!-- espacio donde se dibuja tabla con lista de disfraces-->
     </div>
