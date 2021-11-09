@@ -212,7 +212,7 @@ function actualizarListaClientes(items){
     for(let i of items){
         let idCliente = i.idClient;
         tablaListadoClientes+="<tr>"
-                                +"<td><a href=Javascript:verDetalleCliente("+idCliente+")>" + i.idClient + "</a></td>"
+                                +"<td><a class='linkBody' href=Javascript:verDetalleCliente("+idCliente+")>" + i.idClient + "</a></td>"
                                 +"<td>" + i.name + "</td>"
                             +"</tr>";
     }
@@ -246,12 +246,7 @@ function detalleCliente(items){
  */
 function limpiarInputFormularioCliente(){
     
-    $("#idCliente").val("");
-    $("#nombreCliente").val("");
-    $("#edadCliente").val("");
-    $("#correoCliente").val("");
-    $("#claveCliente").val("");
-
+    document.getElementById("formCliente").reset();
     document.getElementById("botonActualizarCliente").hidden = true;
     document.getElementById("botonBorrarCliente").hidden = true;
     document.getElementById("botonRegistroCliente").hidden = false;

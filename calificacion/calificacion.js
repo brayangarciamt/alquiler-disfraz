@@ -6,6 +6,7 @@
 
  let BASE_URL_SCORE = 'http://168.138.130.41:8080/api/Score'; // Pruebas con server
 
+window.onload = getCalificacion();
 
 /**
  * Funcion que trae todos los registros de calificacion
@@ -154,7 +155,7 @@ function createTableScore(items){
     for(let i of items){
         let idScore = i.id;
         tablaListadoScore+="<tr>"
-                                +"<td><a href=Javascript:getIdCalificacion("+idScore+")>" + idScore + "</td>"                                                            
+                                +"<td><a class='linkBody' href=Javascript:getIdCalificacion("+idScore+")>" + idScore + "</td>"                                                            
                                 +"<td>" + i.score + "</td>"
                                 +"<td>" + i.reservation.client.name + "</td>"
                                 +"<td>" + i.reservation.client.email + "</td>"
@@ -195,6 +196,11 @@ function detalleCalificacion(items){
      * 
      */
     document.getElementById("idReservaCalificacion").disabled = true;
+
+    /**
+     * Mostrar formulario para modificar datos
+     */
+    document.getElementById("conteCalificacion").hidden = false;
     
 }
 
@@ -220,7 +226,16 @@ function limpiarFormularioScore(){
      */
     
     document.getElementById("idReservaCalificacion").disabled = false;
+
+    /**
+     * ocultar formulario para modificar, mostrar lista calificaciones,
+     * mostrar barra de enlaces
+     */
+    document.getElementById("conteCalificacion").hidden = true;
+    document.getElementById("listadoCalificacion").hidden = false;
+    document.getElementById("enlaceCal").hidden = false;
     
+    getCalificacion();
 }
 
 /**
@@ -228,6 +243,12 @@ function limpiarFormularioScore(){
  * 
  */
 var modificarScore = function(items) {
+
+    /**
+     * Mostrar formulario para modificar datos, ocultar lista de calificaciones
+     */
+    document.getElementById("conteCalificacion").hidden = false;
+    document.getElementById("listadoCalificacion").hidden = true;
 
     /**
      * El formulario se rellena con los valores respuesta de la calificacion seleccionada
@@ -251,9 +272,9 @@ var modificarScore = function(items) {
      * 
      * se oculta enlace para ir a pagina principal
      */
-    document.getElementById("botonListaCalificacion").hidden = true;
+    // document.getElementById("botonListaCalificacion").hidden = true;
     document.getElementById("listadoCalificacion").hidden = true;
-    document.getElementById("mainPage").hidden = true;
+    document.getElementById("enlaceCal").hidden = true;
 
 }
 
@@ -261,6 +282,13 @@ var modificarScore = function(items) {
  * 
  */
 var sinCalificarScore = function(idReservation){
+
+    /**
+     * Mostrar formulario para modificar datos,
+     * ocultar lista de calificaciones
+     */
+    document.getElementById("conteCalificacion").hidden = false;
+    document.getElementById("listadoCalificacion").hidden = true;
 
     /**
      * establecer el cuadro de IdReservation con el parametro que se
@@ -282,9 +310,9 @@ var sinCalificarScore = function(idReservation){
      * Para ocultar boton que muestra tabla con reservaciones y
      * el boton que ejecuta la funcion para mostrar tabla
      */
-    document.getElementById("botonListaCalificacion").hidden = true;
+    // document.getElementById("botonListaCalificacion").hidden = true;
     document.getElementById("listadoCalificacion").hidden = true;
-    document.getElementById("mainPage").hidden = true;
+    document.getElementById("enlaceCal").hidden = true;
 
 }
 

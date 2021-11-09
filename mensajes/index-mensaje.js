@@ -7,6 +7,7 @@ let mensajes = [];
 let BASE_URL = 'http://168.138.130.41:8080/api/Message'; //pruebas con server
 let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' //pruebas con server
 
+window.onload = listaSelectDisfraces();
 
 $(document).ready(function () {
     if($("#editSection").length) $("#editSection").hide();
@@ -175,7 +176,7 @@ function renderTable() {
  * 
  * la lista es mostrada en el elemento select IdDisfrazMensaje
  */
-window.onload = function listaSelectDisfraces(){
+function listaSelectDisfraces(){
     let opciones = {    method: 'GET',
                         headers: {'Content-Type': 'application/json'},
                         // body: capturarDatosDisfraz()

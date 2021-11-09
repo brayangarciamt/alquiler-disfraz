@@ -151,7 +151,7 @@ function createTableCategoria(items){
     for(let i of items){
         let idCategoria = i.id;
         tablaListadoCategoria+="<tr>"
-                                +"<td><a href=Javascript:getIdCategoria("+idCategoria+")>" + i.id + "</a></td>"                                                            
+                                +"<td><a class='linkBody' href=Javascript:getIdCategoria("+idCategoria+")>" + i.id + "</a></td>"                                                            
                                 +"<td>" + i.name + "</td>"                                                              
                             +"</tr>";
     }

@@ -8,6 +8,7 @@
 let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume'; // Pruebas con server
 let BASE_URL_CATEGORY = 'http://168.138.130.41:8080/api/Category'; // pruebas con local h
 
+window.onload = listaSelectCategoria();
 
 /**
  * Funcion encarga de obtener los datos de la tabla Costume
@@ -191,7 +192,7 @@ function createTableDisfraz(items){
     for(let i of items){
         let idDisfraz = i.id;
         tablaListadoDisfraces+="<tr>"
-                                +"<td><a href=Javascript:getIdDisfraz("+idDisfraz+")>" + i.id + "</a></td>"                                                            
+                                +"<td><a class='linkBody' href=Javascript:getIdDisfraz("+idDisfraz+")>" + i.id + "</a></td>"                                                            
                                 +"<td>" + i.name + "</td>"                                                              
                             +"</tr>";
     }
@@ -272,7 +273,7 @@ function capturarDatosDisfraz(){
  * select de categoria disfraz
  * 
  */
-window.onload = function listaSelectCategoria(){
+function listaSelectCategoria(){
     let opciones = {    method: 'GET',
                         headers: {'Content-Type': 'application/json'},
                         // body: capturarDatosDisfraz()

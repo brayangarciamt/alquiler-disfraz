@@ -19,6 +19,15 @@ let BASE_URL_REPORTDATES = 'http://168.138.130.41:8080/api/Reservation/report-da
 let BASE_URL_REPORTSTATUS = 'http://168.138.130.41:8080/api/Reservation/report-status';
 let BASE_URL_REPORTCLIENTS = 'http://168.138.130.41:8080/api/Reservation/report-clients';
 
+/**
+ * Se ejecutan las funciones al cargar pagina
+ */
+window.onload = function(){
+
+    getReporteComparativo();
+    getReporteClientes();
+
+}
 
 
 /**
@@ -152,27 +161,21 @@ function creaReportClient(items){
                             +"</tr>"; //cierre de fila
     for(let i of items){
         if(i.total!=0){
+            let completadas=0;
             for(let j of i.client.reservations){
                 if(j.status == "completed"){
-                    tablaReporte += "<tr>"                                                        
-                                +"<td>" + i.client.name + "</td>"
-                                +"<td>" + i.total + "</td>"                                                   
-                            +"</tr>";
+                    completadas += 1;
                 }
             }  
+            if(completadas>0){
+                tablaReporte += "<tr>"                                                        
+                                +"<td>" + i.client.name + "</td>"
+                                +"<td>" + completadas + "</td>"                                                   
+                            +"</tr>";
+            }
         }                        
     }
     tablaReporte += "</table>"; //etiqueta para crear tabla
     document.getElementById("tablaTopClientes").innerHTML = tablaReporte;
-
-}
-
-/**
- * Se ejecutan las funciones al cargar pagina
- */
-window.onload = function(){
-
-    getReporteComparativo();
-    getReporteClientes();
 
 }

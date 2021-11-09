@@ -10,6 +10,8 @@ let URL_CALIFICAR = './../calificacion/index-calificacion.html'
 let BASE_URL_RESERVATION = 'http://168.138.130.41:8080/api/Reservation'; // Pruebas con server
 let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' 
 
+window.onload = listaSelectDisfraz();
+
 /**
  * Funcion que trae todos los registros de reservacion
  * almacenados en la BD
@@ -58,7 +60,7 @@ function getIdReserva(id){
  * select de reservacion disfraz
  * 
  */
-window.onload = function listaSelectDisfraz(){
+function listaSelectDisfraz(){
     let opciones = {    method: 'GET',
                         headers: {'Content-Type': 'application/json'},
                         // body: capturarDatosDisfraz()
@@ -221,16 +223,16 @@ function createTableReserva(items){
     for(let i of items){
         let idReservation = i.idReservation;
         tablaListadoReserva+="<tr>"
-                                +"<td><a href=Javascript:getIdReserva("+idReservation+")>" + i.idReservation + "</a></td>"                                                            
+                                +"<td><a class='linkBody' href=Javascript:getIdReserva("+idReservation+")>" + i.idReservation + "</a></td>"                                                            
                                 +"<td>" + i.costume.name + "</td>"
                                 +"<td>" + i.client.idClient + "</td>"
                                 +"<td>" + i.client.name + "</td>"
                                 +"<td>" + i.client.email + "</td>";
         if(i.score){
             let itemsJson = JSON.stringify(i);
-            tablaListadoReserva+="<td><b>" + i.score.score + "</b>&nbsp>>>&nbsp<button type='button' onclick='modificar("+itemsJson+")'>modificar</button></td>";
+            tablaListadoReserva+="<td><b>" + i.score.score + "</b>&nbsp>>>&nbsp<button type='button' class='botonCalificar' onclick='modificar("+itemsJson+")'>modificar</button></td>";
         }else{
-            tablaListadoReserva+="<td><b>Sin calificar</b>&nbsp>>>&nbsp<button type='button' onclick='sinCalificar("+idReservation+")'>calificar</button></td>";
+            tablaListadoReserva+="<td><b>Sin calificar</b>&nbsp>>>&nbsp<button type='button'class='botonCalificar' onclick='sinCalificar("+idReservation+")'>calificar</button></td>";
         }                                                           
         tablaListadoReserva+="</tr>";
     }
@@ -316,8 +318,8 @@ function limpiarFormularioReserva(){
  */
 function modificar(items){
 
-    var ventanaM = window.open(URL_CALIFICAR,target="_blank",'width=400,height=500');
-    ventanaM.addEventListener("load",function(){
+    var ventanaM = window.open(URL_CALIFICAR,target="_blank",'width=500,height=500');
+    ventanaM.addEventListener("DOMContentLoaded",function(){
         console.log("--- Ventana calificar abierta ---!");
         ventanaM.modificarScore(items);
     });
@@ -331,8 +333,8 @@ function modificar(items){
  */
 function sinCalificar(idReservation){
 
-    var ventanaC = window.open(URL_CALIFICAR,target="_blank",'width=400,height=500');
-    ventanaC.addEventListener("load",function(){
+    var ventanaC = window.open(URL_CALIFICAR,target="_blank",'width=500,height=500');
+    ventanaC.addEventListener("DOMContentLoaded",function(){
         console.log("--- Ventana calificar abierta ---!");
         ventanaC.sinCalificarScore(idReservation);
     });

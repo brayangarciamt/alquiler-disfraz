@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
     <link rel="stylesheet" href="./../css/estilos.css">
+    <!-- Script -->
     <script src="reservacion.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Reservaciones</title>
 </head>
 <body>
-    <a href="./../index.html">Pagina principal</a>
-    
+    <div class="enlaces">
+        <nav>
+            <ul>
+                <li><a class="active" href="./../index.html">Home</a></li>
+                <li><a href="./../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="./../categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="./../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="./../mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="./../reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="./../calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="./../reporte/index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div> 
+    <br/>  
     <div class="formularios">
         <h2>Datos de la reservacion</h2><br/>
         <form id="formReservacion">
@@ -47,9 +62,13 @@
             <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioReservacion" value="Limpiar formulario" onclick="limpiarFormularioReserva()">  
         </form>
     </div>
-    <input type="button" id="botonListaReservacion" onclick="getReservacion()" value="Actualizar lista reservaciones"><br/><br/>
+    <input type="button" id="botonListaReservacion" class="botonListar" onclick="getReservacion()" value="Actualizar lista reservaciones"><br/><br/>
     <div id="listadoReservacion">
     <!-- espacio donde se dibuja tabla con lista de reservaciones-->
     </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer> 
 </body>
 </html>
