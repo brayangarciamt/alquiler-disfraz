@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- Script -->
+    <script src="reservacion.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Reservaciones</title>
+</head>
+<body>
+    <div class="enlaces">
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="../categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="../mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="../calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="../reporte/index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div> 
+    <br/>  
+    <div class="formularios">
+        <h2>Datos de la reservacion</h2><br/>
+        <form id="formReservacion">
+            <label for="idReservacion">ID:</label>
+            <input type="text" id="idReservacion" name="inputIdReservacion" disabled><br/>
+
+            <label for="disfrazReservacion">Disfraz:</label>
+            <select id="disfrazReservacion" name="inputDisfrazReservacion" >
+                <!-- Lista de disfraz -->
+            </select><br/> 
+
+            <label for="idClienteReservacion">ID cliente:</label>
+            <input type="number" id="idClienteReservacion" name="inputIdClienteReservacion" autocomplete="off"><br/>
+
+            <label for="fechaInicio">Fecha inicio:</label>
+            <input type="datetime-local" id="fechaInicio" name="inputFechaInicio" ><br/>
+
+            <label for="fechaEntrega">Fecha entrega:</label>
+            <input type="datetime-local" id="fechaEntrega" name="inputFechaEntrega"><br/>
+            
+            <label for="status">Estado:</label>
+            <select id="status" name="inputStatus" disabled>
+                <option value="created" selected>Programado</option>
+                <option value="cancelled">Cancelado</option>
+                <option value="completed">Realizado</option>
+            </select>
+            <br/><br/>
+            
+            <input type="button" class="botonCrear" id="botonCrearReservacion" onclick="saveReservacion()" value="Crear reservacion">
+            <input type="button" class="botonActualizar" id="botonActualizarReservacion" onclick="updateReservacion()" value="Actualizar reservacion" hidden>
+            <input type="button" class="botonBorrar" id="botonBorrarReservacion" onclick="deleteReservacion()" value="Borrar reservacion" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioReservacion" value="Limpiar formulario" onclick="limpiarFormularioReserva()">  
+        </form>
+    </div>
+    <input type="button" id="botonListaReservacion" class="botonListar" onclick="getReservacion()" value="Actualizar lista reservaciones"><br/><br/>
+    <div id="listadoReservacion">
+    <!-- espacio donde se dibuja tabla con lista de reservaciones-->
+    </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer> 
+</body>
+</html>

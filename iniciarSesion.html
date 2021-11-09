@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/peticiones.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <title>Registro</title>
+    <title>Iniciar sesion</title>
 </head>
 <body>
-    <a href="main.html">Pagina principal</a>
-    
+    <div class="enlaces"></div>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </div> 
+    <br/> 
     <div class="formularios">
         <h2>Iniciar sesion</h2><br/>
         <form>
@@ -19,8 +25,7 @@
             <input type="text" id="labelCorreoIniciar" name="inputCorreoIniciar"><br/>
             <label for="labelClaveIniciar">Contraseña:</label>
             <input type="password" id="labelClaveIniciar" name="inputTClaveIniciar"><br/><br/>
-            
-            <button id="botonIniciarSesion" onclick="">Iniciar sesion</button>s
+            <input type="button" id="botonIniciarSesion" onclick="" value="Iniciar sesion">
         </form>
     </div>
 </body>

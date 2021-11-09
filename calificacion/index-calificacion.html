@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- Script -->
+    <script src="calificacion.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Calificacion</title>
+</head>
+<body>
+    <div class="enlaces" id="enlaceCal">
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="../categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="../mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="../reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="index-calificacion.html">Calificaciones</a></li>
+                <li><a href="../reporte/index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div>  
+    <br/>  
+    <div class="formularios" id="conteCalificacion" hidden>
+        <h2>Datos de la calificacion</h2><br/>
+        <form id="formCalificacion" onreset="cerrarPagina()" >
+            <label for="idCalificacion">ID:</label>
+            <input type="number" id="idCalificacion" name="inputIdCalificacion" disabled><br/>
+
+            <label for="idReservaCalificacion">ID reservacion:</label>
+            <input type="number" id="idReservaCalificacion" name="inputIdReservaCalificacion" autocomplete="off"><br/>
+
+            <label for="calificacion">Calificacion:</label>
+            <select id="calificacion" name="inputCalificacion">
+                <option value="">Seleccionar</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br/> 
+
+            <label for="mensajeCalificacion">Mensaje:</label>
+            <textarea id="mensajeCalificacion" name="inputMensajeCalificacion" rows="5" cols="40" maxlength="250" autocomplete="off" placeholder="Mensaje para el administrador"></textarea><br/><br/>
+            
+            <input type="button" class="botonCrear" id="botonCrearCalificacion" onclick="saveCalificacion()" value="Enviar calificacion">
+            <input type="button" class="botonActualizar" id="botonActualizarCalificacion" onclick="updateCalificacion()" value="Actualizar calificacion" hidden>
+            <input type="button"class="botonBorrar" id="botonBorrarCalificacion" onclick="deleteCalificacion()" value="Borrar calificacion" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioCalificacion" value="Limpiar formulario" onclick="limpiarFormularioScore()">  
+        </form>
+    </div>
+    <!-- <input type="button" id="botonListaCalificacion" onclick="getCalificacion()" value="Actualizar lista calificaciones"><br/><br/> -->
+    <div id="listadoCalificacion">
+    <!-- espacio donde se dibuja tabla con lista de Calificaciones-->
+    </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer> 
+</body>
+</html>

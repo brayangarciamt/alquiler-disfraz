@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="categoria.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Categoria</title>
+</head>
+<body>
+    <div class="enlaces">
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="index-categoria.html">Categorias</a></li>
+                <li><a href="../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="../mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="../reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="../calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="../reporte/index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br/>  
+    <div class="formularios">
+            <h2>Datos de la categoria</h2><br/>
+        <form id="formCategoria">
+            <label for="idCategoria">ID:</label>
+            <input type="text" id="idCategoria" name="inputIdDisfraz" size="6" disabled><br/>
+
+            <label for="nombreCategoria">Nombre:</label>
+            <input type="text" id="nombreCategoria" name="inputNombreCategoria" maxlength="45" autocomplete="off"><br/>
+
+            <label for="descripcionCategoria">Descripcion:</label>
+            <textarea id="descripcionCategoria" name="inputDescripcionCategoria" rows="4" cols="21" maxlength="250" autocomplete="off" placeholder="Descripcion categoria"></textarea><br/>
+            <br/>
+            
+            <input type="button" class="botonCrear" id="botonCrearCategoria" onclick="saveCategoria()" value="Crear categoria">
+            <input type="button" class="botonActualizar" id="botonActualizarCategoria" onclick="updateCategoria()" value="Actualizar categoria" hidden>
+            <input type="button" class="botonBorrar" id="botonBorrarCategoria" onclick="deleteCategoria()" value="Borrar categoria" hidden><br/><br/>
+            <input type="reset" class="botonLimpiar" id="botonLimpiarFormularioCategoria" onclick="limpiarFormularioCategoria()" value="Limpiar formulario">  
+        </form>
+    </div>
+    <input type="button" id="botonListaCategoria" class="botonListar" onclick="getCategoria()" value="Actualizar lista categorias"><br/><br/>
+    <div id="listadoCategoria">
+    <!-- espacio donde se dibuja tabla con lista de categorias-->
+    </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer> 
+</body>
+</html>

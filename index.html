@@ -4,36 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Script -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Alquiler de disfraces</title>
 </head>
 <body>
     <div class="enlaces">
-        <!-- <a href="iniciarSesion.html">Iniciar sesion</a> -->
-        <a href="./cliente/index-cliente.html">Clientes</a>
-        <a href="./disfraz/index-disfraz.html">Disfraces</a>
-        <a href="./mensajes/index-mensaje.html">Mensajes</a>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="reporte/index-reporte.html">Reporte</a></li>
+                <!-- <li><a href="iniciarSesion.html">Iniciar sesion</a></li> -->
+            </ul>
+        </nav>
     </div>  
-
-    <h1>TIENDA DE DISFRACES</h1>
-    <p>Que mas parcero, si necesita reservar los disfraces mas bacanos de la ciudad, llego a donde era.</p>
-    <p>Para reservar es necesario que inicie sesión, si no esta registrado pulse <a href="registroCliente.html">aqui.</a></p>
     <br/>
-
-    <h2>Catalogo</h2>
-    <table id="catalogo">
-        <tr>
-            <td><img src="img/mujer.jpg" alt="Mujer maravilla" style="width:300px;height:500px;"></td>
-            <td><img src="img/cleopatra.jpg" alt="Cleopatra" style="width:300px;height:480px;"></td>
-            <td><img src="img/optimus.jpg" alt="Optimus prime" style="width:300px;height:480px;"></td>
-        </tr>
-        <tr>
-            <td><img src="img/superman.jpg" alt="Superman" style="width:300px;height:300px;"></td>
-            <td><img src="img/spiderman.jpg" alt="Spiderman" style="width:300px;height:300px;"></td>
-            <td><img src="img/capitan.jpg" alt="Capitan america" style="width:300px;height:300px;"></td>
-        </tr>    
-    </table>    
+    <div id="saludoInicial">
+        <h1>TIENDA DE DISFRACES</h1>
+        <p>Que mas parcero, si necesita reservar los disfraces mas bacanos de la ciudad, llego donde era.</p>
+        <p>Para reservar es necesario que inicie sesión, si no esta registrado pulse <a class='linkBody' href="./cliente/index-cliente.html">aqui.</a></p>
+    </div>
+    <br/>
+    <div id="home">
+    <h2>modelos</h2>
+        <table class="tableHome">
+            <tr class="tableHome">
+                <td class="tableHome" ><img class="home" src="img/monja.jpg" alt="Monja"></td>
+                <td class="tableHome" ><img class="home" src="img/spiderman.jpg" alt="Spiderman"></td>
+                <td class="tableHome" ><img class="home" src="img/superman.jpg" alt="Superman"></td>
+                <td class="tableHome" ><img class="home" src="img/capitan.jpg" alt="Capitan america"></td>
+                <td class="tableHome" ><img class="home" src="img/deadpool.jpg" alt="Deadpool"></td>
+                <td class="tableHome" ><img class="home" src="img/bruja.jpg" alt="Bruja"></td>
+            </tr>  
+        </table>  
+    </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer>  
 </body>
 </html>

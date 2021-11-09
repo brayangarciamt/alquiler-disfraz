@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- Script -->
+    <script src="reporte.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <title>Reporte</title>
+</head>
+<body>
+    <div class="enlaces">
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="../categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="../mensajes/index-mensaje.html">Mensajes</a></li>
+                <li><a href="../reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="../calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br/>  
+    <div id="reservasIntervalo">   
+        <form class="formularios">
+            <h1>Reservas por intervalo de tiempo</h1>
+            <label for="fechaIniciaI">Fecha inicial: </label>
+            <input type="datetime-local" id="fechaInicioI" name="inputFechaInicioI">&nbsp&nbsp
+            <label for="fechaFinalI">Fecha final:</label>
+            <input type="datetime-local" id="fechaFinI" name="inputFechaFinI">
+            <input type="button" id="botonReservasInteralo" value="Consultar" onclick="getReporteFechas()">
+            <br/><br/><br/><br/>
+            <div id="tablaReservasIntervalo">
+                <!-- Aqui va la tabla con lista de reservas de acuerdo con el intervalo indicado -->
+            </div>
+        </form>
+    </div>
+    
+    <br/>
+
+    <div id="reservasComparativo">
+        <form class="formularios">
+            <h1>Comparacion reservas completadas y canceladas</h1>
+            <div id="tablaReservasComparativo">
+                <!-- aqui se muestra tabla con cantidad de reservas completadas y canceladas -->
+            </div>
+        </form>
+    </div>
+
+    <br/>
+
+    <div id="topClientes"> 
+        <form class="formularios">
+            <h1>Clientes con reservas completadas</h1>
+            <div id="tablaTopClientes">
+                <!-- aqui se muestra tabla con cantidad de clientes con reservas completadas -->
+            </div>
+        </form>
+    </div>
+    <br/>
+    <footer>
+        <p>Tienda de disfraces - 2021 &copy;</p>
+    </footer> 
+</body>
+</html>

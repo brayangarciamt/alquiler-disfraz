@@ -1,51 +1,126 @@
-h1{
-    text-align: center;
-}
-h2{
-    text-align: center;
+/* Barra de enlaces
+Ubicado en la parte superior*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #555;
 }
 
-label {
-    display: inline-block;
-    width: 100px;
+li { float: left;}
+
+li a {
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
 }
+/*para cambiar de color posicionar puntero*/
+li a:hover { background-color: white ; color: black;}
+/*para darle color al Home*/
+li a.active { background-color:rgb(211, 70, 70);color: white; }
+
+
+/* Contenido Home */
+
+/* propiedades tabla disfraces*/
+img.home{ width:250px; height: 400px; }
+.tableHome{padding: 0;border: 0;border : 1px dotted black;}
+
+
+
+/*Propiedades de las tablas que se dibujan 
+en los diferente modulos*/
+
+#home{overflow-x: auto;} /*no se daña el orden de tabla al cambiar tamaño ventana*/
+
 
 table{
     border-collapse: collapse;
+    border : 1px solid black;
     margin: auto;
-    width: 300px;
-}
-
-th, tr, td{
-    border : 1px solid rgb(0, 0, 0);
-    height: fit-content;
     width: fit-content;
-    padding: 5px;
 }
 
-.enlaces{
-    text-align: right;
-}
+/*para mostrar franjas horizontales grises en tabla*/
+tr:nth-child(even) {background-color: #f2f2f2;}
+th{padding: 20px; background-color:rgb(211, 70, 70);color: white;}
+td{padding: 10px;}
 
+
+
+/* Propiedades de los formularios */
 .formularios{
     margin: auto;
     height: fit-content;
     width: fit-content;
     padding: 20px;
     border: 1px solid black;
+    border-radius: 4px;
 }
 
-#botonBorrarDisfraz{
-    background-color: red;
+/* Alinear los input */
+label { display: inline-block; width: 120px; }
+
+/*Estilo de los input formulario*/
+input[type=text], input[type=password],input[type=datetime-local], input[type=number], select {
+    display: inline-block;
+    padding: 7px 7px;
+    box-sizing: border-box;
+}
+
+/*Estilo botones*/
+input.botonActualizar, input.botonLimpiar, input.botonListar, input[type=button] {
+    background-color: #555;
     color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-#botonLimpiarFormularioDisfraz{
-    background-color:gold;
-    color: black;
+input.botonActualizar:hover, input.botonLimpiar:hover, input.botonListar:hover,input[type=button]:hover{
+    background-color: rgb(124, 120, 120);
 }
 
-#botonListaDisfraz{
-    background-color:greenyellow;
-    color: black;
+input.botonCrear{
+    background-color: rgb(37, 155, 82);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+input.botonCrear:hover{
+    background-color: rgb(71, 182, 61);
+}
+
+input.botonBorrar{
+    background-color: rgb(221, 45, 45);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input.botonBorrar:hover{
+    background-color: red;
+}
+
+
+/* Fuentes para el contenido */
+
+body{ font-family: Arial, Helvetica, sans-serif;}
+h1{ font-family: Helvetica, sans-serif;text-align: center;}
+h2{text-align: center;}
+a.linkBody{text-decoration:none;}
+a.linkBody:hover{font-size:150%;text-decoration:underline;}
+#home{margin: auto;width: fit-content;}
+footer{
+    width: 100%;
+    background-color: #555;
+    color: white;
+    padding: 1px;
+    text-align: center;}

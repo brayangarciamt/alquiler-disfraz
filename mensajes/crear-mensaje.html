@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +8,34 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="index-mensaje.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <header>
         <h1>Creacion de Nuevo Mensaje</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index-mensaje.html">Atras</a></li>
-        </ul>
-    </nav>
+    <a class='linkBody' href="index-mensaje.html">>>> Regresar a mensajes</a><br/><br/>
 
-    <section>
-        <form action="/index-mensaje.html" id="formMensaje">
-            <label for="id">ID:</label><br>
-            <input type="text" id="id" name="id"><br>
+    <div class="formularios"> 
+        <section>
+            <form action="/index-mensaje.html" id="formMensaje">
+                <label for="idMensaje" autocomplete="off" disabled>ID mensaje:</label>
+                <input type="text" id="idMensaje" name="inputIdMensaje" disabled><br>
 
-            <label for="messagetext">Escriba aqui su mensaje:</label><br>
-            <textarea id="messagetext" name="messagetext" rows="10" cols="50"></textarea>
-
-            <input type="button" value="Submit" onclick="saveMensaje()">
-        </form>
-    </section>
-
+                <label for="disfrazMensaje">ID disfraz:</label>
+                <select id="disfrazMensaje" name="inputDisfrazMensaje">
+                    <!-- Lista de disfraces -->
+                </select>
+                <br><br>
+                <label for="messagetext">Escriba su mensaje:</label><br>
+                <textarea id="messagetext" name="messagetext" rows="10" cols="50" maxlength="250" placeholder="Mensaje aqui"></textarea><br/>
+                <input type="button" value="Enviar mensaje" onclick="saveMensaje()">
+            </form>
+        </section>
+    </div>
+    <br/><br/>
     <footer>
         <p>Made with ❤</p>
     </footer>

@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RETO 2</title>
+    <title>Mensajes</title>
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="index-mensaje.js"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <div class="enlaces">
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../cliente/index-cliente.html">Clientes</a></li>
+                <li><a href="../categoria/index-categoria.html">Categorias</a></li>
+                <li><a href="../disfraz/index-disfraz.html">Disfraces</a></li>
+                <li><a href="index-mensaje.html">Mensajes</a></li>
+                <li><a href="../reservaciones/index-reservaciones.html">Reservaciones</a></li>
+                <li><a href="../calificacion/index-calificacion.html">Calificaciones</a></li>
+                <li><a href="../reporte/index-reporte.html">Reporte</a></li>
+            </ul>
+        </nav>
+    </div> 
+
     <header>
         <h1>Modulo de Mensajes</h1>
     </header>
 
-    <section>
-        <nav>
-            <ul>
-                <li><a href="./../index.html">Menu principal</a></li>
-                <li><a href="crear-mensaje.html">Registrar nuevo mensaje</a></li>
-            </ul>
-        </nav>
-
+    <section> 
         <article>
             <h2>Listado de Mensajes</h2>
+            <a class='linkBody' href="crear-mensaje.html">>>> Registrar nuevo mensaje</a><br/><br/>
             <table id="tableMensaje">
             </table>
         </article>
@@ -33,22 +44,22 @@
     <br>
     <section id="editSection">
         <h3>Formulario de edicion</h3>
-        <nav>
-            <ul>
-                <li><a href="index-mensaje.html">Cerrar edicion</a></li>
-            </ul>
-        </nav>
-        <form id="formUpdateMensaje">
+        <a class='linkBody' href="index-mensaje.html">>>>Cerrar edicion</a><br/><br/>
+
+        <form id="formUpdateMensaje" class="formularios">
             <label for="idUpdate">ID:</label><br>
-            <input type="text" id="idUpdate" name="idUpdate"><br>
+            <input type="text" id="idUpdate" name="idUpdate" disabled><br>
+
+            <label for="disfrazMensajeUpdate">Disfraz:</label><br>
+            <input type="text" id="disfrazMensajeUpdate" name="inputDisfrazMensajeUpdate" disabled><br>
 
             <label for="messagetextUpdate">Escriba aqui su mensaje:</label><br>
             <textarea id="messagetextUpdate" name="messagetextUpdate" rows="10" cols="50"></textarea>
-
+            <br/>
             <input type="button" value="Editar" onclick="updateMensaje()">
         </form>
     </section>
-
+    <br/>
     <footer>
         <p>Made with ❤</p>
     </footer>
