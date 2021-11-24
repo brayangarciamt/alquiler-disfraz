@@ -5,8 +5,8 @@
 // let BASE_URL_COSTUME = 'http://localhost:8080/api/Costume'; // pruebas con local host
 // let BASE_URL_CATEGORY = 'http://localhost:8080/api/Category'; // pruebas con local host
 
-let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume'; // Pruebas con server
-let BASE_URL_CATEGORY = 'http://168.138.130.41:8080/api/Category'; // pruebas con local h
+let BASE_URL_COSTUME = 'http://168.138.130.41:9090/api/Costume'; // Pruebas con server
+let BASE_URL_CATEGORY = 'http://168.138.130.41:9090/api/Category'; // pruebas con local h
 
 window.onload = listaSelectCategoria();
 

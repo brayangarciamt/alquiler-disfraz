@@ -7,8 +7,8 @@
 
 let URL_CALIFICAR = './../calificacion/index-calificacion.html'
 
-let BASE_URL_RESERVATION = 'http://168.138.130.41:8080/api/Reservation'; // Pruebas con server
-let BASE_URL_COSTUME = 'http://168.138.130.41:8080/api/Costume' 
+let BASE_URL_RESERVATION = 'http://168.138.130.41:9090/api/Reservation'; // Pruebas con server
+let BASE_URL_COSTUME = 'http://168.138.130.41:9090/api/Costume' 
 
 window.onload = listaSelectDisfraz();
 
