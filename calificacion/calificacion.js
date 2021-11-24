@@ -4,7 +4,7 @@
 
 //  let BASE_URL_SCORE = 'http://localhost:8080/api/Score'; // pruebas con local host
 
- let BASE_URL_SCORE = 'http://168.138.130.41:8080/api/Score'; // Pruebas con server
+ let BASE_URL_SCORE = 'http://168.138.130.41:9090/api/Score'; // Pruebas con server
 
 window.onload = getCalificacion();
 
