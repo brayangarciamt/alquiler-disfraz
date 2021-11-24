@@ -243,9 +243,8 @@ function capturarCategoriaDisfraz(elementoSelect){
 
     let select = document.getElementById(elementoSelect);
     let selectedOption = select.options[select.selectedIndex];
-    let retornoCategoria = {id:selectedOption.value};
 
-    return retornoCategoria;
+    return {id:selectedOption.value};
     
 }
 

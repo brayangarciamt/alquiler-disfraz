@@ -22,9 +22,8 @@ function capturarDisfrazMensaje(elementoSelect){
 
     let select = document.getElementById(elementoSelect);
     let selectedOption = select.options[select.selectedIndex];
-    let retornoDisfraz = {id:selectedOption.value};
 
-    return retornoDisfraz;
+    return {id:selectedOption.value};
 }
 
 function getMensajes() {

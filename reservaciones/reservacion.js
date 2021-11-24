@@ -165,9 +165,8 @@ function capturarDisfrazReserva(elementoSelect){
 
     let select = document.getElementById(elementoSelect);
     let selectedOption = select.options[select.selectedIndex];
-    let retornoDisfraz = {id:selectedOption.value};
 
-    return retornoDisfraz;
+    return {id:selectedOption.value};
     
 }
 
@@ -318,7 +317,8 @@ function limpiarFormularioReserva(){
  */
 function modificar(items){
 
-    var ventanaM = window.open(URL_CALIFICAR,target="_blank",'width=500,height=500');
+    let opcionTarget = "_blank";
+    var ventanaM = window.open(URL_CALIFICAR,opcionTarget,'width=500,height=500');
     ventanaM.addEventListener("DOMContentLoaded",function(){
         console.log("--- Ventana calificar abierta ---!");
         ventanaM.modificarScore(items);
@@ -333,7 +333,8 @@ function modificar(items){
  */
 function sinCalificar(idReservation){
 
-    var ventanaC = window.open(URL_CALIFICAR,target="_blank",'width=500,height=500');
+    let opcionTarget = "_blank";
+    var ventanaC = window.open(URL_CALIFICAR,opcionTarget,'width=500,height=500');
     ventanaC.addEventListener("DOMContentLoaded",function(){
         console.log("--- Ventana calificar abierta ---!");
         ventanaC.sinCalificarScore(idReservation);

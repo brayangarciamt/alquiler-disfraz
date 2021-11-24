@@ -82,7 +82,7 @@ function creaReportDates(items,fecha1,fecha2){
                                 +"<td>"+fecha1+"</td>"
                                 +"<td>" + fecha2 + "</td>"
                                 +"<td>" + items.length + "</td>"                                                        
-                            +"</tr>";
+                            +"</tr>"
                         +"</table>"; //etiqueta para crear tabla
     document.getElementById("tablaReservasIntervalo").innerHTML = tablaReporte;
 }
@@ -122,7 +122,7 @@ function creaReportStatus(items){
                             +"<tr>"                                                        
                                 +"<td>" + items.completed + "</td>"
                                 +"<td>" + items.cancelled + "</td>"                                                   
-                            +"</tr>";
+                            +"</tr>"
                         +"</table>"; //etiqueta para crear tabla
     document.getElementById("tablaReservasComparativo").innerHTML = tablaReporte;
 
